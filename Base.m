@@ -16,14 +16,14 @@ Time = 10;
 mu = 1000;             % модуль сдвига
 k = 10000;              % к-т объёмного сжатия
 E=9*k*mu/(3*k+mu);   % модуль Юнга
-sqn=10;
+sqn=20;
 l=0.01;
 N=sqn*sqn;
 S=l*l;
 %S=H*L;
 m=rho_0*S/N;
-h=(m/rho_0)^(1/2);
-dt=0.00001;
+h=2*(m/rho_0)^(1/2);
+dt=0.0001;
 fr=10;
     
     %coordinate(particle) initialization
