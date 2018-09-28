@@ -39,7 +39,8 @@ fr=10;
      for i = 1:N
              for j = 1:N
                 for beta = 1:2
-                  nabla_W0(1,1:2,i,j)=Compute_nabla_W(i,j,x,h,beta);
+                   nabla_W= Compute_nabla_W(i,j,x,h,beta);
+                  nabla_W0(1,beta,i,j)=nabla_W(beta);
                 end
              end
      end
@@ -54,7 +55,7 @@ fr=10;
     for n = 1:fix(Time/dt)
                 
         L=zeros(2,2,N);
-       
+       F=zeros(2,2,N);
        
         for i = 1:N
              for j = 1:N
@@ -131,7 +132,7 @@ fr=10;
         subplot(2,2,4);
         trisurf(tri,x_coord,y_coord,errSIG);    
         pause(0.0000001);
-        F=zeros(2,2,N);
+        
         
     end
     main=F;    
