@@ -53,6 +53,9 @@ fr=10;
     
     for n = 1:fix(Time/dt)
                 
+         for i = 1:N
+         F(1:2,1:2,i)=eye(2);
+         end
         L=zeros(2,2,N);
        
        
@@ -131,7 +134,7 @@ fr=10;
         subplot(2,2,4);
         trisurf(tri,x_coord,y_coord,errSIG);    
         pause(0.0000001);
-        F=zeros(2,2,N);
+        
         
     end
     main=F;    
